@@ -1,10 +1,8 @@
-# An Actual Website by Raiyan 
-
-A modern, responsive portfolio website built with HTML, CSS, and JavaScript featuring an interactive animated background and smooth user experience.
+# Portfolio of MD. Raiyan Sazid Khan by RSK
 
 ## Live url
 
-Visit the live website: [https://wasdr1.github.io/Portfolio-of-Raiyan/](https://wasdr1.github.io/Portfolio-of-Raiyan/)
+Visit the live website: [https://RSK.github.io/RSK/](https://RSK.github.io/RSK/)
 
 ---
 
