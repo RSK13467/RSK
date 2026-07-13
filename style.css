@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* Background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0f0c29;
+  z-index: -1;
+}
+
+/* Loader */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0f0c29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top: 4px solid #00f7ff;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255,255,255,0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00f7ff;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* Neon text */
+.neon {
+  color: #00f7ff;
+  text-shadow: 0 0 20px #00f7ff;
+}
+
+/* Content */
+.content {
+  padding: 20px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+/* Lift + neon shadow on hover */
+.card:hover {
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+/* Ensure elements with both .card and .tilt get both translate + rotate */
+.card.tilt:hover {
+  transform: translateY(-10px) rotateY(10deg) rotateX(10deg);
+}
+
+/* Keep tilt-only fallback (if not also .card) */
+.tilt:hover {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+
+/* Project images */
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Skills */
+.skill {
+  margin: 15px 0;
+}
+
+.bar {
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 10px;
+  background: #00f7ff;
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+/* Profile */
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid #00f7ff;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+}
+
+/* Mobile menu */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    padding: 10px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* AI Mastery */
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.ai-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.ai-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+.ai-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.ai-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00f7ff, #6c63ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}
+
+.ai-card h3 {
+  margin: 0;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .ai-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-grid {
+    grid-template-columns: 1fr;
+  }
+}

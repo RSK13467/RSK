@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wasdr1.github.io/Portfolio-of-Raiyan/sitemap.xml
