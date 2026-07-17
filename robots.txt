@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wasdr1.github.io/Portfolio-of-Raiyan/sitemap.xml
+Sitemap: https://RSK13467.github.io/RSK/sitemap.xml
