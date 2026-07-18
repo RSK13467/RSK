@@ -15,43 +15,43 @@
   "related_applications": [],
   "icons": [
     {
-      "src": "/RSK/favicon-16x16.png",
+      "src": "/RSK/assets/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/RSK/favicon-32x32.png",
+      "src": "/RSK/assets/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/RSK/android-chrome-192x192.png",
+      "src": "/RSK/assets/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/RSK/android-chrome-192x192-maskable.png",
+      "src": "/RSK/assets/android-chrome-192x192-maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/RSK/android-chrome-512x512.png",
+      "src": "/RSK/assets/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/RSK/android-chrome-512x512-maskable.png",
+      "src": "/RSK/assets/android-chrome-512x512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/RSK/apple-touch-icon.png",
+      "src": "/RSK/assets/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
@@ -59,14 +59,14 @@
   ],
   "screenshots": [
     {
-      "src": "/RSK/screenshot-540x720.png",
+      "src": "/RSK/assets/screenshot-540x720.png",
       "sizes": "540x720",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Portfolio Homepage Mobile View"
     },
     {
-      "src": "/RSK/screenshot-1280x720.png",
+      "src": "/RSK/assets/screenshot-1280x720.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
@@ -81,7 +81,7 @@
       "url": "/RSK/#projects",
       "icons": [
         {
-          "src": "/RSK/shortcut-projects-192x192.png",
+          "src": "/RSK/assets/shortcut-projects-192x192.png",
           "sizes": "192x192",
           "type": "image/png",
           "purpose": "any"
@@ -95,7 +95,7 @@
       "url": "/RSK/#skills",
       "icons": [
         {
-          "src": "/RSK/shortcut-skills-192x192.png",
+          "src": "/RSK/assets/shortcut-skills-192x192.png",
           "sizes": "192x192",
           "type": "image/png",
           "purpose": "any"
@@ -109,7 +109,7 @@
       "url": "/RSK/#ai-mastery",
       "icons": [
         {
-          "src": "/RSK/shortcut-ai-192x192.png",
+          "src": "/RSK/assets/shortcut-ai-192x192.png",
           "sizes": "192x192",
           "type": "image/png",
           "purpose": "any"
@@ -128,7 +128,7 @@
     }
   },
   "manifest_version": 3,
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "MD. Raiyan Sazid Khan",
   "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"]
 }
