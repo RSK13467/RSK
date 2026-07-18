@@ -1,13 +1,14 @@
 {
   "name": "MD. Raiyan Sazid Khan - Portfolio Website",
-  "short_name": "RSK",
-  "description": "Future Developer & AI Enthusiast.",
+  "short_name": "Raiyan",
+  "description": "Future Developer & AI Enthusiast. Portfolio showcasing expertise in web development with HTML, CSS, and JavaScript. Proficient with AI tools including Gemini, Claude, and ChatGPT.",
   "start_url": "/RSK/",
   "scope": "/RSK/",
   "display": "standalone",
   "background_color": "#0f0c29",
   "theme_color": "#00f7ff",
-  "orientation": "portrait-primary",  
+  "orientation": "portrait-primary",
+  "categories": ["technology", "business"],
   "lang": "en-US",
   "dir": "ltr",
   "prefer_related_applications": false,
@@ -88,9 +89,9 @@
       ]
     },
     {
-      "name": "Tech Stack",
+      "name": "Technical Skills",
       "short_name": "Skills",
-      "description": "Explore expertise in HTML, CSS, JavaScript, and AI tools",
+      "description": "Explore expertise in HTML, CSS, JavaScript, and C programming",
       "url": "/RSK/#skills",
       "icons": [
         {
@@ -102,7 +103,7 @@
       ]
     },
     {
-      "name": "AI Mastery",
+      "name": "AI Tools Proficiency",
       "short_name": "AI Tools",
       "description": "Discover proficiency with Gemini, Claude, ChatGPT, and more",
       "url": "/RSK/#ai-mastery",
@@ -116,22 +117,6 @@
       ]
     }
   ],
-  "screenshots_alt": [
-    {
-      "src": "/RSK/screenshot-mobile-hero.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Hero Section with Typing Animation"
-    },
-    {
-      "src": "/RSK/screenshot-ai-grid.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "AI Tools Grid - Gemini, Claude, ChatGPT, DeepSeek, and more"
-    }
-  ],
   "share_target": {
     "action": "/RSK/share",
     "method": "POST",
@@ -143,7 +128,7 @@
     }
   },
   "manifest_version": 3,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "MD. Raiyan Sazid Khan",
   "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"]
 }

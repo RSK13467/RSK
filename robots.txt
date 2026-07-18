@@ -1,4 +1,14 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://RSK13467.github.io/RSK/sitemap.xml
+# Disallow sensitive paths
+Disallow: /private/
+Disallow: /.git/
+Disallow: /assets/temp/
+
+# Sitemap
+Sitemap: https://rsk13467.github.io/RSK/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
