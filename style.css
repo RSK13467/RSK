@@ -521,3 +521,105 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================================================
+   Global Theme Variables for Social Buttons
+   ========================================================================== */
+:root {
+  --social-btn-bg: rgba(0, 0, 0, 0.05);
+  --social-btn-color: #1f2937;
+  --social-btn-border: rgba(0, 0, 0, 0.08);
+  --social-btn-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --social-btn-bg: rgba(255, 255, 255, 0.08);
+    --social-btn-color: #f9fafb;
+    --social-btn-border: rgba(255, 255, 255, 0.12);
+    --social-btn-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ==========================================================================
+   Footer Social Buttons Component
+   ========================================================================== */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+/* Base Button Style with Glassmorphic Effect */
+.social-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--social-btn-bg);
+  color: var(--social-btn-color);
+  border: 1px solid var(--social-btn-border);
+  box-shadow: var(--social-btn-shadow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-decoration: none;
+  overflow: hidden;
+  
+  /* Hardware Accelerated Transitions */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+}
+
+/* Hover & Micro-Interactions */
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.social-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Brand Specific Glows & Colors */
+.instagram-btn:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(214, 36, 159, 0.45);
+}
+
+.credly-btn:hover {
+  background-color: #FF6B00;
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+}
+
+/* Accessibility Focus Outline */
+.social-btn:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 4px;
+}
+
+/* Motion Sensitivity Handling */
+@media (prefers-reduced-motion: reduce) {
+  .social-btn,
+  .social-icon {
+    transition: none !important;
+    transform: none !important;
+  }
+}
