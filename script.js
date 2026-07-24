@@ -83,19 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==================== PAGE LOADER ====================
 
 /**
- * Handle page load completion
+ * Handle page load completion with optimized timing
  */
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   if (loader) {
-    loader.style.opacity = '0';
+    // Add slight delay for smooth transition
     setTimeout(() => {
-      loader.classList.add('hidden');
-      loader.style.display = 'none';
-    }, 500);
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        loader.style.display = 'none';
+      }, 500);
+    }, 300);
   }
 
-  // Start animations after page load
+  // Start animations after page load with staggered timing
   startTyping();
   initParticles();
   debouncedOnScroll();
@@ -116,7 +119,7 @@ function onScroll() {
     }
   });
 
-  // Initialize progress bars only once
+  // Initialize progress bars only once with improved performance
   if (!progressInitialized) {
     const bars = document.querySelectorAll('.progress');
     const anyVisible = Array.from(bars).some(
@@ -124,10 +127,12 @@ function onScroll() {
     );
 
     if (anyVisible) {
-      bars.forEach(bar => {
-        if (bar.dataset.width) {
-          bar.style.width = bar.dataset.width;
-        }
+      requestAnimationFrame(() => {
+        bars.forEach(bar => {
+          if (bar.dataset.width) {
+            bar.style.width = bar.dataset.width;
+          }
+        });
       });
       progressInitialized = true;
     }
@@ -156,24 +161,26 @@ function startTyping() {
 }
 
 /**
- * Animate typing character by character
+ * Animate typing character by character with variable speed
  */
 function type() {
   const el = document.getElementById('typing');
   if (!el) return;
 
   if (typingIndex < typingText.length) {
-    // Use textContent for security (no XSS)
     el.textContent += typingText.charAt(typingIndex);
     typingIndex++;
-    typingTimeout = setTimeout(type, 100);
+    
+    // Slight variation in typing speed for natural feel
+    const speed = typingIndex > 15 ? 120 : 100;
+    typingTimeout = setTimeout(type, speed);
   }
 }
 
 // ==================== PARTICLE BACKGROUND ====================
 
 /**
- * Initialize particle background animation
+ * Initialize particle background animation with retry logic
  */
 function initParticles() {
   const loaderEl = document.getElementById('particles-loader');
@@ -189,7 +196,7 @@ function initParticles() {
   }
 
   let attempts = 0;
-  const maxAttempts = 8;
+  const maxAttempts = 10;
   const attemptDelay = 250;
 
   const attemptInit = () => {
@@ -231,37 +238,37 @@ function initParticles() {
 }
 
 /**
- * Create particle configuration
+ * Create particle configuration with enhanced visuals
  */
 function createParticles() {
   try {
     particlesJS('particles-js', {
       particles: {
         number: {
-          value: 90,
+          value: 100,
           density: {
             enable: true,
-            value_area: 800
+            value_area: 850
           }
         },
         color: {
-          value: '#00f7ff'
+          value: ['#00f7ff', '#6c63ff', '#00d4ff']
         },
         shape: {
           type: 'circle'
         },
         opacity: {
-          value: 0.5,
-          random: false,
+          value: 0.6,
+          random: true,
           anim: {
             enable: true,
-            speed: 1,
+            speed: 1.2,
             opacity_min: 0.1,
             sync: false
           }
         },
         size: {
-          value: 5,
+          value: 4,
           random: true,
           anim: {
             enable: false,
@@ -272,16 +279,16 @@ function createParticles() {
         },
         line_linked: {
           enable: true,
-          distance: 150,
-          color: '#00f7ff',
-          opacity: 0.3,
-          width: 1
+          distance: 160,
+          color: ['#00f7ff', '#6c63ff'],
+          opacity: 0.35,
+          width: 1.5
         },
         move: {
           enable: true,
-          speed: 2,
+          speed: 2.2,
           direction: 'none',
-          random: false,
+          random: true,
           straight: false,
           out_mode: 'out',
           bounce: false,
@@ -320,11 +327,11 @@ function createParticles() {
             speed: 3
           },
           repulse: {
-            distance: 200,
-            duration: 0.4
+            distance: 220,
+            duration: 0.5
           },
           push: {
-            particles_nb: 4
+            particles_nb: 5
           },
           remove: {
             particles_nb: 2
@@ -352,30 +359,37 @@ function createParticles() {
 // ==================== LAZY LOADING IMAGES ====================
 
 /**
- * Initialize lazy loading for images
+ * Initialize lazy loading for images with improved performance
  */
 function initLazyLoading() {
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
+    const imageLoadConfig = {
+      root: null,
+      rootMargin: '50px',
+      threshold: 0.01
+    };
+
+    const imageObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
           if (img.dataset.src) {
             img.src = img.dataset.src;
             img.removeAttribute('data-src');
+            img.classList.add('loaded');
           }
-          observer.unobserve(img);
+          imageObserver.unobserve(img);
         }
       });
-    });
+    }, imageLoadConfig);
 
     document.querySelectorAll('img[data-src]').forEach(img => {
-      observer.observe(img);
+      imageObserver.observe(img);
     });
   }
 }
 
-// Initialize on DOM ready
+// Initialize on DOM ready with performance optimization
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initLazyLoading);
 } else {
@@ -399,4 +413,38 @@ if (!('scrollBehavior' in document.documentElement.style)) {
   });
 }
 
-console.log('Portfolio script loaded successfully!');
+// ==================== PERFORMANCE MONITORING ====================
+
+/**
+ * Monitor and log performance metrics
+ */
+if ('PerformanceObserver' in window) {
+  try {
+    const perfObserver = new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        console.log(`${entry.name}: ${entry.duration}ms`);
+      }
+    });
+    
+    perfObserver.observe({ entryTypes: ['measure'] });
+  } catch (e) {
+    console.warn('Performance observer not available:', e.message);
+  }
+}
+
+// ==================== RESOURCE HINTS ====================
+
+/**
+ * Optimize resource loading with preload/prefetch
+ */
+function optimizeResourceLoading() {
+  // Prefetch particles.js library
+  const link = document.createElement('link');
+  link.rel = 'prefetch';
+  link.href = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
+  document.head.appendChild(link);
+}
+
+optimizeResourceLoading();
+
+console.log('Portfolio script loaded successfully with enhancements!');
