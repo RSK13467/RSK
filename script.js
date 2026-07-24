@@ -83,22 +83,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==================== PAGE LOADER ====================
 
 /**
- * Handle page load completion with optimized timing
+ * Handle page load completion
  */
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   if (loader) {
-    // Add slight delay for smooth transition
+    loader.style.opacity = '0';
     setTimeout(() => {
-      loader.style.opacity = '0';
-      setTimeout(() => {
-        loader.classList.add('hidden');
-        loader.style.display = 'none';
-      }, 500);
-    }, 300);
+      loader.classList.add('hidden');
+      loader.style.display = 'none';
+    }, 500);
   }
 
-  // Start animations after page load with staggered timing
+  // Start animations after page load
   startTyping();
   initParticles();
   debouncedOnScroll();
@@ -119,7 +116,7 @@ function onScroll() {
     }
   });
 
-  // Initialize progress bars only once with improved performance
+  // Initialize progress bars only once
   if (!progressInitialized) {
     const bars = document.querySelectorAll('.progress');
     const anyVisible = Array.from(bars).some(
@@ -127,12 +124,10 @@ function onScroll() {
     );
 
     if (anyVisible) {
-      requestAnimationFrame(() => {
-        bars.forEach(bar => {
-          if (bar.dataset.width) {
-            bar.style.width = bar.dataset.width;
-          }
-        });
+      bars.forEach(bar => {
+        if (bar.dataset.width) {
+          bar.style.width = bar.dataset.width;
+        }
       });
       progressInitialized = true;
     }
@@ -161,26 +156,24 @@ function startTyping() {
 }
 
 /**
- * Animate typing character by character with variable speed
+ * Animate typing character by character
  */
 function type() {
   const el = document.getElementById('typing');
   if (!el) return;
 
   if (typingIndex < typingText.length) {
+    // Use textContent for security (no XSS)
     el.textContent += typingText.charAt(typingIndex);
     typingIndex++;
-    
-    // Slight variation in typing speed for natural feel
-    const speed = typingIndex > 15 ? 120 : 100;
-    typingTimeout = setTimeout(type, speed);
+    typingTimeout = setTimeout(type, 100);
   }
 }
 
 // ==================== PARTICLE BACKGROUND ====================
 
 /**
- * Initialize particle background animation with retry logic
+ * Initialize particle background animation
  */
 function initParticles() {
   const loaderEl = document.getElementById('particles-loader');
@@ -196,7 +189,7 @@ function initParticles() {
   }
 
   let attempts = 0;
-  const maxAttempts = 10;
+  const maxAttempts = 8;
   const attemptDelay = 250;
 
   const attemptInit = () => {
@@ -238,37 +231,37 @@ function initParticles() {
 }
 
 /**
- * Create particle configuration with enhanced visuals
+ * Create particle configuration
  */
 function createParticles() {
   try {
     particlesJS('particles-js', {
       particles: {
         number: {
-          value: 100,
+          value: 90,
           density: {
             enable: true,
-            value_area: 850
+            value_area: 800
           }
         },
         color: {
-          value: ['#00f7ff', '#6c63ff', '#00d4ff']
+          value: '#00f7ff'
         },
         shape: {
           type: 'circle'
         },
         opacity: {
-          value: 0.6,
-          random: true,
+          value: 0.5,
+          random: false,
           anim: {
             enable: true,
-            speed: 1.2,
+            speed: 1,
             opacity_min: 0.1,
             sync: false
           }
         },
         size: {
-          value: 4,
+          value: 5,
           random: true,
           anim: {
             enable: false,
@@ -279,16 +272,16 @@ function createParticles() {
         },
         line_linked: {
           enable: true,
-          distance: 160,
-          color: ['#00f7ff', '#6c63ff'],
-          opacity: 0.35,
-          width: 1.5
+          distance: 150,
+          color: '#00f7ff',
+          opacity: 0.3,
+          width: 1
         },
         move: {
           enable: true,
-          speed: 2.2,
+          speed: 2,
           direction: 'none',
-          random: true,
+          random: false,
           straight: false,
           out_mode: 'out',
           bounce: false,
@@ -327,11 +320,11 @@ function createParticles() {
             speed: 3
           },
           repulse: {
-            distance: 220,
-            duration: 0.5
+            distance: 200,
+            duration: 0.4
           },
           push: {
-            particles_nb: 5
+            particles_nb: 4
           },
           remove: {
             particles_nb: 2
@@ -359,37 +352,30 @@ function createParticles() {
 // ==================== LAZY LOADING IMAGES ====================
 
 /**
- * Initialize lazy loading for images with improved performance
+ * Initialize lazy loading for images
  */
 function initLazyLoading() {
   if ('IntersectionObserver' in window) {
-    const imageLoadConfig = {
-      root: null,
-      rootMargin: '50px',
-      threshold: 0.01
-    };
-
-    const imageObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
           if (img.dataset.src) {
             img.src = img.dataset.src;
             img.removeAttribute('data-src');
-            img.classList.add('loaded');
           }
-          imageObserver.unobserve(img);
+          observer.unobserve(img);
         }
       });
-    }, imageLoadConfig);
+    });
 
     document.querySelectorAll('img[data-src]').forEach(img => {
-      imageObserver.observe(img);
+      observer.observe(img);
     });
   }
 }
 
-// Initialize on DOM ready with performance optimization
+// Initialize on DOM ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initLazyLoading);
 } else {
@@ -413,38 +399,4 @@ if (!('scrollBehavior' in document.documentElement.style)) {
   });
 }
 
-// ==================== PERFORMANCE MONITORING ====================
-
-/**
- * Monitor and log performance metrics
- */
-if ('PerformanceObserver' in window) {
-  try {
-    const perfObserver = new PerformanceObserver((entryList) => {
-      for (const entry of entryList.getEntries()) {
-        console.log(`${entry.name}: ${entry.duration}ms`);
-      }
-    });
-    
-    perfObserver.observe({ entryTypes: ['measure'] });
-  } catch (e) {
-    console.warn('Performance observer not available:', e.message);
-  }
-}
-
-// ==================== RESOURCE HINTS ====================
-
-/**
- * Optimize resource loading with preload/prefetch
- */
-function optimizeResourceLoading() {
-  // Prefetch particles.js library
-  const link = document.createElement('link');
-  link.rel = 'prefetch';
-  link.href = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
-  document.head.appendChild(link);
-}
-
-optimizeResourceLoading();
-
-console.log('Portfolio script loaded successfully with enhancements!');
+console.log('Portfolio script loaded successfully!');
