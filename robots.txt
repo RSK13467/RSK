@@ -9,6 +9,3 @@ Disallow: /assets/temp/
 
 # Sitemap
 Sitemap: https://rsk13467.github.io/RSK/sitemap.xml
-
-# Crawl delay (optional)
-Crawl-delay: 1
