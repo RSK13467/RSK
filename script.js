@@ -252,7 +252,7 @@ function createParticles() {
         },
         opacity: {
           value: 0.5,
-          random: false,
+          random: true,
           anim: {
             enable: true,
             speed: 1,
