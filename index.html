@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio | MD. Raiyan Sazid Khan - Lifelong learner.">
-  <meta name="keywords" content="portfolio, MD. Raiyan Sazid Khan, RSK, rsk, MD.RSK, MD. RSK, Raiyan, Raiyan Sazid, MD. Raiyan Sazid">
+  <meta name="keywords" content="portfolio, MD> Raiyan Sazid Khan, RSK, rsk, MD.RSK, MD. RSK, Raiyan, Raiyan Sazid">
   <meta name="author" content="MD. Raiyan Sazid Khan">
   <meta name="theme-color" content="#00f7ff">
   <meta name="mobile-web-app-capable" content="yes">
@@ -17,17 +17,17 @@
   <meta name="url" content="https://rsk13467.github.io/RSK/">
   <meta name="site_name" content="RSK">
 
+
   <!-- SEO & Search Console Verification -->
-  <meta name="google-site-verification" content="SnCLSN_zF9si7Ff0HO_fFwxpZwiYBEct2izN5Me640g" />
-  <meta name="msvalidate.01" content="D92D8E931C0C50FD4B3FD4B0107ECAE4" />
+ <meta name="google-site-verification" content="SnCLSN_zF9si7Ff0HO_fFwxpZwiYBEct2izN5Me640g" />
+ <meta name="msvalidate.01" content="D92D8E931C0C50FD4B3FD4B0107ECAE4" />
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rsk13467.github.io/RSK/">
   <meta property="og:title" content="RSK | Portfolio">
   <meta property="og:description" content="Portfolio | MD. Raiyan Sazid Khan - Lifelong learner.">
-  <!-- Use an existing asset to avoid 404s -->
-  <meta property="og:image" content="https://rsk13467.github.io/RSK/assets/profile.jpg">
+  <meta property="og:image" content="https://rsk13467.github.io/RSK/assets/og-image.png">
   <meta property="og:site_name" content="RSK">
 
   <!-- Twitter Card -->
@@ -35,7 +35,7 @@
   <meta name="twitter:url" content="https://rsk13467.github.io/RSK/">
   <meta name="twitter:title" content="RSK | Portfolio">
   <meta name="twitter:description" content="Portfolio | MD. Raiyan Sazid Khan - Lifelong learner.">
-  <meta name="twitter:image" content="https://rsk13467.github.io/RSK/assets/profile.jpg">
+  <meta name="twitter:image" content="https://rsk13467.github.io/RSK/assets/og-image.png">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://rsk13467.github.io/RSK/">
@@ -54,24 +54,20 @@
 
   <title>RSK | Portfolio</title>
 
-  <!-- Structured data (JSON-LD) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "RSK | Portfolio of Raiyan",
-    "url": "https://rsk13467.github.io/RSK/"
-  }
-  </script>
-
-  <!-- Clarity tracking (proper script tag) -->
-  <script>
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "RSK | Portfolio of Raiyan",
+  "url": "https://rsk13467.github.io/RSK/"
+}
+<!-- Clarity tracking code for https://rsk13467.github.io/RSK/ -->
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/xy095k8m2j?ref=bwt";
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xy095k8m2j");
-  </script>
+</script>
 </head>
 
 <body>
@@ -95,13 +91,13 @@
       ☰
     </button>
     <nav id="nav" role="navigation" aria-label="Main navigation">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#ai-mastery">AI Tools</a>
+      <a href="#projects" onclick="closeMenu()">Projects</a>
+      <a href="#skills" onclick="closeMenu()">Skills</a>
+      <a href="#ai-mastery" onclick="closeMenu()">AI Tools</a>
     </nav>
   </header>
 
-  <main id="main-content" role="main" tabindex="-1">
+  <main id="main-content" role="main">
     <!-- Hero Section -->
     <section class="hero reveal active" aria-labelledby="hero-title">
       <div class="hero-content">
@@ -126,7 +122,7 @@
         <article class="card glass">
           <img src="/RSK/assets/Annamalai.webp" class="project-img" alt="Creativity Sphere Annamalai program interface" loading="lazy">
           <h3>Creativity Sphere</h3>
-          <p class="card-description">'Creativity and Innovation' creative development program</p>
+          <p class="card-description">'Ceativity and Innovation' creative development program</p>
         </article>
 
         <article class="card glass">
@@ -144,8 +140,8 @@
     </section>
 
     <!-- Achievements section -->
-    <section id="achievements" class="content reveal">
-      <h2 id="achievements-title">Achievements</h2>
+    <section id="ai-mastery" class="content reveal">
+      <h2 id="ai-title">Achievements</h2>
 
       <div class="ai-grid" role="region">
         
@@ -273,8 +269,8 @@
     </section>
 
     <!-- AI Mastery Section -->
-    <section id="ai-mastery" class="content reveal" aria-labelledby="ai-tools-title">
-      <h2 id="ai-tools-title">AI Tools Proficiency</h2>
+    <section id="ai-mastery" class="content reveal" aria-labelledby="ai-title">
+      <h2 id="ai-title">AI Tools Proficiency</h2>
 
       <div class="ai-grid" role="region" aria-label="AI tools I am proficient with">
         <article class="ai-card glass" aria-label="Google Gemini">
@@ -353,8 +349,8 @@
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
    <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top" aria-label="Back to top" aria-hidden="true" title="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 15l-6-6-6 6"/>
     </svg>
   </button>
