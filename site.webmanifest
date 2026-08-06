@@ -1,14 +1,14 @@
 {
-  "name": "MD. Raiyan Sazid Khan - Portfolio Website",
-  "short_name": "Raiyan",
-  "description": "Future Developer & AI Enthusiast. Portfolio showcasing expertise in web development with HTML, CSS, and JavaScript. Proficient with AI tools including Gemini, Claude, and ChatGPT.",
+  "name": "MD. Raiyan Sazid Khan | Portfolio Website",
+  "short_name": "RSK",
+  "description": "",
   "start_url": "/RSK/",
   "scope": "/RSK/",
   "display": "standalone",
   "background_color": "#0f0c29",
   "theme_color": "#00f7ff",
   "orientation": "portrait-primary",
-  "categories": ["technology", "business"],
+  "categories": ["portfolio"],
   "lang": "en-US",
   "dir": "ltr",
   "prefer_related_applications": false,
@@ -77,7 +77,7 @@
     {
       "name": "View Projects",
       "short_name": "Projects",
-      "description": "Browse XZystrox AI, Creativity Sphere, and Custom Cipher projects",
+      "description": "Browse XZystrox AI, Creativity Sphere, Custom Cipher, Ccomputor etc. projects",
       "url": "/RSK/#projects",
       "icons": [
         {
