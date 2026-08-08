@@ -15,6 +15,11 @@
   "related_applications": [],
   "icons": [
     {
+      "src" : "/RSK/assets/favicon.ico"
+      "type: "image/x-icon"
+      "purpose" : "any"
+    }
+    {
       "src": "/RSK/assets/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png",
@@ -52,9 +57,13 @@
     },
     {
       "src": "/RSK/assets/apple-touch-icon.png",
-      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
+    }
+    {
+      "src": "/RSK/assets/apple-touch-icon.png",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "screenshots": [
@@ -70,7 +79,7 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Portfolio Projects Section Desktop View"
+      "label": "Portfolio Homepage Desktop View"
     }
   ],
   "shortcuts": [
@@ -79,42 +88,18 @@
       "short_name": "Projects",
       "description": "Browse XZystrox AI, Creativity Sphere, Custom Cipher, Ccomputor etc. projects",
       "url": "/RSK/#projects",
-      "icons": [
-        {
-          "src": "/RSK/assets/shortcut-projects-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "any"
-        }
-      ]
     },
     {
       "name": "Technical Skills",
       "short_name": "Skills",
       "description": "Explore expertise in HTML, CSS, JavaScript, and C programming",
       "url": "/RSK/#skills",
-      "icons": [
-        {
-          "src": "/RSK/assets/shortcut-skills-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "any"
-        }
-      ]
     },
     {
       "name": "AI Tools Proficiency",
       "short_name": "AI Tools",
       "description": "Discover proficiency with Gemini, Claude, ChatGPT, and more",
       "url": "/RSK/#ai-mastery",
-      "icons": [
-        {
-          "src": "/RSK/assets/shortcut-ai-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png",
-          "purpose": "any"
-        }
-      ]
     }
   ],
   "share_target": {
@@ -122,9 +107,9 @@
     "method": "POST",
     "enctype": "multipart/form-data",
     "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
+      "title": "RSK | Portfolio",
+      "text": "Portfolio of MD. Raiyan Sazid Khan",
+      "url": "https://rsk13467.github.io/RSK/"
     }
   },
   "manifest_version": 3,
