@@ -15,11 +15,6 @@
   "related_applications": [],
   "icons": [
     {
-      "src" : "/RSK/assets/favicon.ico"
-      "type: "image/x-icon"
-      "purpose" : "any"
-    }
-    {
       "src": "/RSK/assets/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png",
